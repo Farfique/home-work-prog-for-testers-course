@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class NewGroupTest extends NewGroupBaseClass{
+public class NewGroupTest extends NewBaseClass{
   @Test
   public void testAddNewGroupNonEmpty() throws Exception {
     goToHomePage();
