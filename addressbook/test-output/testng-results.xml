@@ -2,42 +2,42 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11492" started-at="2014-05-18T17:03:38Z" finished-at="2014-05-18T17:03:50Z">
+  <suite name="Default suite" duration-ms="15551" started-at="2014-05-25T07:49:39Z" finished-at="2014-05-25T07:49:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11492" started-at="2014-05-18T17:03:38Z" finished-at="2014-05-18T17:03:50Z">
+    <test name="Default test" duration-ms="15551" started-at="2014-05-25T07:49:39Z" finished-at="2014-05-25T07:49:54Z">
       <class name="com.example.tests.NewGroupTest">
-        <test-method status="PASS" signature="testAddNewGroupNonEmpty()[pri:0, instance:com.example.tests.NewGroupTest@3bf400]" name="testAddNewGroupNonEmpty" duration-ms="3724" started-at="2014-05-18T21:03:38Z" finished-at="2014-05-18T21:03:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddNewGroupNonEmpty -->
-      </class> <!-- com.example.tests.NewGroupTest -->
-      <class name="com.example.tests.NewGroupEmptyData">
-        <test-method status="PASS" signature="testAddNewGroupEmpty()[pri:0, instance:com.example.tests.NewGroupEmptyData@1a06946]" name="testAddNewGroupEmpty" duration-ms="1902" started-at="2014-05-18T21:03:42Z" finished-at="2014-05-18T21:03:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddNewGroupEmpty -->
-      </class> <!-- com.example.tests.NewGroupEmptyData -->
-      <class name="com.example.tests.NewEmptyContactTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.NewEmptyContactTest@a71081]" name="setUp" is-config="true" duration-ms="5189" started-at="2014-05-18T21:03:33Z" finished-at="2014-05-18T21:03:38Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.NewGroupTest@16a9952]" name="setUp" is-config="true" duration-ms="5355" started-at="2014-05-25T11:49:33Z" finished-at="2014-05-25T11:49:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testAddNewEmptyContact()[pri:0, instance:com.example.tests.NewEmptyContactTest@a71081]" name="testAddNewEmptyContact" duration-ms="2733" started-at="2014-05-18T21:03:44Z" finished-at="2014-05-18T21:03:47Z">
+        <test-method status="PASS" signature="testAddNewGroupNonEmpty()[pri:0, instance:com.example.tests.NewGroupTest@16a9952]" name="testAddNewGroupNonEmpty" duration-ms="4834" started-at="2014-05-25T11:49:39Z" finished-at="2014-05-25T11:49:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddNewEmptyContact -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.NewEmptyContactTest@a71081]" name="tearDown" is-config="true" duration-ms="249" started-at="2014-05-18T21:03:50Z" finished-at="2014-05-18T21:03:50Z">
+        </test-method> <!-- testAddNewGroupNonEmpty -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.NewGroupTest@16a9952]" name="tearDown" is-config="true" duration-ms="316" started-at="2014-05-25T11:49:54Z" finished-at="2014-05-25T11:49:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.NewEmptyContactTest -->
-      <class name="com.example.tests.NewContactTest1">
-        <test-method status="PASS" signature="testAddNewFullContact()[pri:0, instance:com.example.tests.NewContactTest1@1f03bb1]" name="testAddNewFullContact" duration-ms="3110" started-at="2014-05-18T21:03:47Z" finished-at="2014-05-18T21:03:50Z">
+      </class> <!-- com.example.tests.NewGroupTest -->
+      <class name="com.example.tests.NewContactTest">
+        <test-method status="PASS" signature="testAddNewFullContact()[pri:0, instance:com.example.tests.NewContactTest@cf72fd]" name="testAddNewFullContact" duration-ms="4608" started-at="2014-05-25T11:49:47Z" finished-at="2014-05-25T11:49:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddNewFullContact -->
-      </class> <!-- com.example.tests.NewContactTest1 -->
+      </class> <!-- com.example.tests.NewContactTest -->
+      <class name="com.example.tests.NewEmptyContactTest">
+        <test-method status="PASS" signature="testAddNewEmptyContact()[pri:0, instance:com.example.tests.NewEmptyContactTest@3bf400]" name="testAddNewEmptyContact" duration-ms="3079" started-at="2014-05-25T11:49:44Z" finished-at="2014-05-25T11:49:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddNewEmptyContact -->
+      </class> <!-- com.example.tests.NewEmptyContactTest -->
+      <class name="com.example.tests.NewEmptyGroupTest">
+        <test-method status="PASS" signature="testAddNewEmptyGroup()[pri:0, instance:com.example.tests.NewEmptyGroupTest@1f03bb1]" name="testAddNewEmptyGroup" duration-ms="3004" started-at="2014-05-25T11:49:51Z" finished-at="2014-05-25T11:49:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddNewEmptyGroup -->
+      </class> <!-- com.example.tests.NewEmptyGroupTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-public class NewBaseClass {
+public class TestBaseClass {
 
 	protected static WebDriver driver;
 	protected static String baseUrl;
@@ -39,14 +39,14 @@ public class NewBaseClass {
 		driver.findElement(By.linkText("group page")).click();
 	}
 
-	protected void fillGroupDataAndSubmit(GroupDataParameter groupData) {
+	protected void fillGroupDataAndSubmit(GroupData groupData) {
 		driver.findElement(By.name("new")).click();
 	    driver.findElement(By.name("group_name")).clear();
-	    driver.findElement(By.name("group_name")).sendKeys(groupData._groupname);
+	    driver.findElement(By.name("group_name")).sendKeys(groupData.groupname);
 	    driver.findElement(By.name("group_header")).clear();
-	    driver.findElement(By.name("group_header")).sendKeys(groupData._header);
+	    driver.findElement(By.name("group_header")).sendKeys(groupData.header);
 	    driver.findElement(By.name("group_footer")).clear();
-	    driver.findElement(By.name("group_footer")).sendKeys(groupData._footer);
+	    driver.findElement(By.name("group_footer")).sendKeys(groupData.footer);
 	    driver.findElement(By.name("submit")).click();
 	}
 
@@ -95,38 +95,40 @@ public class NewBaseClass {
 		driver.findElement(By.linkText("home page")).click();
 	}
 
-	protected void fillContactData(ContactDataParameter contactData) {
+	protected void fillContactData(ContactData contactData) {
 		//Name
 		driver.findElement(By.name("firstname")).clear();
-	    driver.findElement(By.name("firstname")).sendKeys(contactData._contactName);
+	    driver.findElement(By.name("firstname")).sendKeys(contactData.contactName);
 	    //Last name
 	    driver.findElement(By.name("lastname")).clear();
-	    driver.findElement(By.name("lastname")).sendKeys(contactData._lastName);
+	    driver.findElement(By.name("lastname")).sendKeys(contactData.lastName);
 	    //Home Address
 	    driver.findElement(By.name("address")).clear();
-	    driver.findElement(By.name("address")).sendKeys(contactData._firstAddress);
+	    driver.findElement(By.name("address")).sendKeys(contactData.firstAddress);
 	    //Phones
 	    driver.findElement(By.name("home")).clear();
-	    driver.findElement(By.name("home")).sendKeys(contactData._firstHomePhone);
+	    driver.findElement(By.name("home")).sendKeys(contactData.firstHomePhone);
 	    driver.findElement(By.name("mobile")).clear();
-	    driver.findElement(By.name("mobile")).sendKeys(contactData._mobilePhone);
+	    driver.findElement(By.name("mobile")).sendKeys(contactData.mobilePhone);
 	    driver.findElement(By.name("work")).clear();
-	    driver.findElement(By.name("work")).sendKeys(contactData._workPhone);
+	    driver.findElement(By.name("work")).sendKeys(contactData.workPhone);
 	    //E-mails
 	    driver.findElement(By.name("email")).clear();
-	    driver.findElement(By.name("email")).sendKeys(contactData._email);
+	    driver.findElement(By.name("email")).sendKeys(contactData.email);
 	    driver.findElement(By.name("email2")).clear();
-	    driver.findElement(By.name("email2")).sendKeys(contactData._secondEmail);
+	    driver.findElement(By.name("email2")).sendKeys(contactData.secondEmail);
 	    //Birth date	    
-	    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(contactData.birthDate._day);
-	    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(contactData.birthDate._month);
+	    if (contactData.day != null){
+	    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(contactData.day);}
+	    if (contactData.month != null){
+	    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(contactData.month);}
 	    driver.findElement(By.name("byear")).clear();
-	    driver.findElement(By.name("byear")).sendKeys(contactData.birthDate._year);
+	    driver.findElement(By.name("byear")).sendKeys(contactData.year);
 	    //Alternative contacts
 	    driver.findElement(By.name("address2")).clear();
-	    driver.findElement(By.name("address2")).sendKeys(contactData._secondAddress);
+	    driver.findElement(By.name("address2")).sendKeys(contactData.secondAddress);
 	    driver.findElement(By.name("phone2")).clear();
-	    driver.findElement(By.name("phone2")).sendKeys(contactData._secondHomePhone);
+	    driver.findElement(By.name("phone2")).sendKeys(contactData.secondHomePhone);
 	    driver.findElement(By.name("submit")).click();
 	}
 

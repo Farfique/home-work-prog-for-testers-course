@@ -2,15 +2,15 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class NewGroupTest extends NewBaseClass{
+public class NewGroupTest extends TestBaseClass{
   @Test
   public void testAddNewGroupNonEmpty() throws Exception {
     goToHomePage();
     goToGroupPage();
-    GroupDataParameter myGroupData = new GroupDataParameter();
-    myGroupData._groupname = "Group 1";
-    myGroupData._header = "Header 1";
-    myGroupData._footer = "Footer 1";
+    GroupData myGroupData = new GroupData();
+    myGroupData.groupname = "Group 1";
+    myGroupData.header = "Header 1";
+    myGroupData.footer = "Footer 1";
     fillGroupDataAndSubmit(myGroupData);
     returnToGroupPage();
   }
