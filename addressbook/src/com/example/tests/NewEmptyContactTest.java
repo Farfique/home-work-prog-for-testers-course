@@ -6,10 +6,11 @@ public class NewEmptyContactTest extends TestBaseClass{
   
   @Test
   public void testAddNewEmptyContact() throws Exception {
-    goToHomePage();
-    goToNewContactPage();
+    app.getNavigationHelper().goToHomePage();
+    app.getContactHelper().goToNewContactPage();
     ContactData contactData = new ContactData();
-    fillContactData(contactData);
-    returnHomeFromNewContact();
+    app.getContactHelper().fillContactData(contactData);
+    app.getContactHelper().submitContact();
+    app.getContactHelper().returnHomeFromNewContact();
   }  
 }

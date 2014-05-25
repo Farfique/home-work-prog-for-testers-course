@@ -6,8 +6,8 @@ public class NewContactTest extends TestBaseClass{
   
   @Test
   public void testAddNewFullContact() throws Exception {
-    goToHomePage();
-    goToNewContactPage();
+    app.getNavigationHelper().goToHomePage();
+    app.getContactHelper().goToNewContactPage();
     ContactData contactData = new ContactData();
     contactData.contactName = "TestName";
     contactData.lastName = "Rabinovich";
@@ -22,8 +22,9 @@ public class NewContactTest extends TestBaseClass{
     contactData.year = "1987";
     contactData.secondAddress = "Energeticheskaya, 40";
     contactData.secondHomePhone = "322-22-22";
-    fillContactData(contactData);
-    returnHomeFromNewContact();
+    app.getContactHelper().fillContactData(contactData);
+    app.getContactHelper().submitContact();
+    app.getContactHelper().returnHomeFromNewContact();
   }
 
   
