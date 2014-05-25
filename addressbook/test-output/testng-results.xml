@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4969" started-at="2014-05-25T08:20:37Z" finished-at="2014-05-25T08:20:42Z">
+  <suite name="Default suite" duration-ms="5718" started-at="2014-05-25T09:16:33Z" finished-at="2014-05-25T09:16:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4969" started-at="2014-05-25T08:20:37Z" finished-at="2014-05-25T08:20:42Z">
+    <test name="Default test" duration-ms="5718" started-at="2014-05-25T09:16:33Z" finished-at="2014-05-25T09:16:38Z">
       <class name="com.example.tests.NewGroupTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.NewGroupTest@1117f44]" name="setUp" is-config="true" duration-ms="10216" started-at="2014-05-25T12:20:27Z" finished-at="2014-05-25T12:20:37Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.NewGroupTest@1117f44]" name="setUp" is-config="true" duration-ms="15115" started-at="2014-05-25T13:16:17Z" finished-at="2014-05-25T13:16:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testAddNewGroupNonEmpty()[pri:0, instance:com.example.tests.NewGroupTest@1117f44]" name="testAddNewGroupNonEmpty" duration-ms="4946" started-at="2014-05-25T12:20:37Z" finished-at="2014-05-25T12:20:42Z">
+        <test-method status="PASS" signature="testAddNewGroupNonEmpty()[pri:0, instance:com.example.tests.NewGroupTest@1117f44]" name="testAddNewGroupNonEmpty" duration-ms="5674" started-at="2014-05-25T13:16:33Z" finished-at="2014-05-25T13:16:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddNewGroupNonEmpty -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.NewGroupTest@1117f44]" name="tearDown" is-config="true" duration-ms="284" started-at="2014-05-25T12:20:42Z" finished-at="2014-05-25T12:20:43Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.NewGroupTest@1117f44]" name="tearDown" is-config="true" duration-ms="294" started-at="2014-05-25T13:16:38Z" finished-at="2014-05-25T13:16:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
