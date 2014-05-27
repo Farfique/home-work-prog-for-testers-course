@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class GroupRemovalTest extends TestBaseClass {
+public class GroupRemovalTests extends TestBaseClass {
 	
 	@Test
 	public void deleteAnyGroup() throws Exception {

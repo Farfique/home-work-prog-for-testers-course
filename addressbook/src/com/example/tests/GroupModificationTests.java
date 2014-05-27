@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class GroupModificationTest extends TestBaseClass {
+public class GroupModificationTests extends TestBaseClass {
 	
 	@Test
 	public void testEditGroup() throws Exception{

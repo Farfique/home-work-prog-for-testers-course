@@ -3,17 +3,37 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.NewGroupTest">
+      <class name="com.example.tests.GroupRemovalTest">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.example.tests.NewGroupTest -->
+      </class> <!-- com.example.tests.GroupRemovalTest -->
+      <class name="com.example.tests.GroupModificationTest">
+        <methods>
+          <include name="testEditGroup"/>
+        </methods>
+      </class> <!-- com.example.tests.GroupModificationTest -->
       <class name="com.example.tests.NewEmptyContactTest">
         <methods>
           <include name="testAddNewEmptyContact"/>
         </methods>
       </class> <!-- com.example.tests.NewEmptyContactTest -->
+      <class name="com.example.tests.NewEmptyGroupTest">
+        <methods>
+          <include name="testAddNewEmptyGroup"/>
+        </methods>
+      </class> <!-- com.example.tests.NewEmptyGroupTest -->
+      <class name="com.example.tests.NewContactTest">
+        <methods>
+          <include name="testAddNewFullContact"/>
+        </methods>
+      </class> <!-- com.example.tests.NewContactTest -->
+      <class name="com.example.tests.NewGroupTest">
+        <methods>
+          <include name="testAddNewGroupNonEmpty"/>
+        </methods>
+      </class> <!-- com.example.tests.NewGroupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

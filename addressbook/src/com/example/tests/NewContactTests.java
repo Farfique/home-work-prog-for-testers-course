@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class NewContactTest extends TestBaseClass{
+public class NewContactTests extends TestBaseClass{
   
   @Test
   public void testAddNewFullContact() throws Exception {
@@ -26,6 +26,14 @@ public class NewContactTest extends TestBaseClass{
     app.getContactHelper().submitContact();
     app.getContactHelper().returnHomeFromNewContact();
   }
-
+  @Test
+  public void testAddNewEmptyContact() throws Exception {
+    app.getNavigationHelper().goToHomePage();
+    app.getContactHelper().goToNewContactPage();
+    ContactData contactData = new ContactData();
+    app.getContactHelper().fillContactData(contactData);
+    app.getContactHelper().submitContact();
+    app.getContactHelper().returnHomeFromNewContact();
+  }  
   
 }
