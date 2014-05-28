@@ -8,7 +8,18 @@ public class GroupRemovalTests extends TestBaseClass {
 	public void deleteAnyGroup() throws Exception {
 		app.getNavigationHelper().goToHomePage();
 	    app.getNavigationHelper().goToGroupPage();
-		app.getGroupHelper().deleteGroup(1);
+	    app.getGroupHelper().selectGroup(2);
+		app.getGroupHelper().deleteGroup();
+		app.getGroupHelper().returnToGroupPage();
+		
+	}
+	@Test
+	public void deleteFewGroups() throws Exception {
+		app.getNavigationHelper().goToHomePage();
+	    app.getNavigationHelper().goToGroupPage();
+	    app.getGroupHelper().selectGroup(1);
+	    app.getGroupHelper().selectGroup(2);
+		app.getGroupHelper().deleteGroup();
 		app.getGroupHelper().returnToGroupPage();
 		
 	}

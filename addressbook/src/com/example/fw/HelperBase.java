@@ -1,5 +1,6 @@
 package com.example.fw;
 
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -65,6 +66,10 @@ public abstract class HelperBase {
 		if (text != null){
 			new Select(driver.findElement(locator)).selectByVisibleText(text);
 	    }
+	}
+	public void selectGroupByIndex(By locator, int index) {
+		new Select(driver.findElement(locator)).selectByIndex(index-1);
+				
 	}
 
 }

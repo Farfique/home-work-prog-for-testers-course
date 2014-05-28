@@ -29,8 +29,7 @@ public class GroupHelper extends HelperBase{
 		click(By.name("submit"));
 	}
 
-	public void deleteGroup(int i) {
-		selectGroup(i);
+	public void deleteGroup() {
 		click(By.name("delete"));
 		
 	}
@@ -39,9 +38,9 @@ public class GroupHelper extends HelperBase{
 		click(By.xpath("//input[@name='selected[]']["+ index +"]"));
 	}
 
-	public void initEdit(int i) {
-		selectGroup(i);
+	public void initEditGroup() {
 		click(By.name("edit"));
+			
 	}
 
 	public void updateGroup() {
