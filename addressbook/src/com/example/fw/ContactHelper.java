@@ -1,6 +1,10 @@
 package com.example.fw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
 
@@ -48,12 +52,12 @@ public class ContactHelper extends HelperBase{
 	}
 	
 	public void selectContact(int index) {
-		int i = index + 1;
+		int i = index + 2;
 		click(By.xpath("//*[@id='maintable']/tbody/tr["+ i +"]/td[1]/*[@type='checkbox']"));
 	}
 	
 	public void initEditContact(int index) {
-		int i = index + 1;
+		int i = index + 2;
 		click(By.xpath("//*[@id='maintable']/tbody/tr["+ i +"]/td[7]/a"));
 	}
 	
@@ -65,7 +69,7 @@ public class ContactHelper extends HelperBase{
 	}
 
 	public void openContactDetails(int index) {
-		int i = index + 1;
+		int i = index + 2;
 		click(By.xpath("//*[@id='maintable']/tbody/tr["+ i +"]/td[6]/a"));
 	}
 	public void modifyContactOnDetails() {
@@ -76,5 +80,19 @@ public class ContactHelper extends HelperBase{
 	}
 	public void selectGroupByIndex(int index) {
 		selectElementByIndex(By.name("to_group"), index);		
+	}
+	public List<ContactData> getContacts() {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
+		for (WebElement checkbox : checkboxes) {
+			int row = checkboxes.indexOf(checkbox) + 2;
+			ContactData contact = new ContactData();
+			contact.contactName = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[3]")).getText();
+			contact.lastName = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[2]")).getText();
+			contact.email = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[4]")).getText();
+			contact.firstHomePhone = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[5]")).getText();
+			contacts.add(contact);		
+		}
+		return contacts;
 	}
 }

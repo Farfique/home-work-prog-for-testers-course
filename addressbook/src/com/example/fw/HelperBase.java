@@ -52,7 +52,7 @@ public abstract class HelperBase {
 	  }
 	
 	public void type(By locator, String text) {
-		if (text != null){
+		if (text.length() != 0 && text!=null){
 		driver.findElement(locator).clear();
 	    driver.findElement(locator).sendKeys(text);
 		}
