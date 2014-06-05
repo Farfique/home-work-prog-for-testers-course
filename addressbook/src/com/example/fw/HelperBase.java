@@ -67,8 +67,8 @@ public abstract class HelperBase {
 			new Select(driver.findElement(locator)).selectByVisibleText(text);
 	    }
 	}
-	public void selectGroupByIndex(By locator, int index) {
-		new Select(driver.findElement(locator)).selectByIndex(index-1);
+	public void selectElementByIndex(By locator, int index) {
+		new Select(driver.findElement(locator)).selectByIndex(index);
 				
 	}
 

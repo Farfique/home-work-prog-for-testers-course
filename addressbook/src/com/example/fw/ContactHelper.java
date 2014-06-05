@@ -71,4 +71,10 @@ public class ContactHelper extends HelperBase{
 	public void modifyContactOnDetails() {
 		click(By.name("modifiy"));	
 	}
+	public void addGroupToContact(){
+		click(By.name("add"));
+	}
+	public void selectGroupByIndex(int index) {
+		selectElementByIndex(By.name("to_group"), index);		
+	}
 }

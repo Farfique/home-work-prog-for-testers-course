@@ -1,6 +1,5 @@
 package com.example.tests;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class ContactModificationTests extends TestBaseClass {
@@ -30,8 +29,8 @@ public class ContactModificationTests extends TestBaseClass {
 	public void testAddGroupToContact() throws Exception{
 		app.getNavigationHelper().goToHomePage();
 		app.getContactHelper().selectContact(4);
-		app.getContactHelper().selectGroupByIndex(By.name("to_group"), 3);
-		app.getContactHelper().click(By.name("add"));
+		app.getContactHelper().selectGroupByIndex(3);
+		app.getContactHelper().addGroupToContact();
 		app.getNavigationHelper().goToAGroupPage();
 		
 	}
@@ -42,8 +41,8 @@ public class ContactModificationTests extends TestBaseClass {
 		app.getContactHelper().selectContact(1);
 		app.getContactHelper().selectContact(2);
 		app.getContactHelper().selectContact(3);
-		app.getContactHelper().selectGroupByIndex(By.name("to_group"), 3);
-		app.getContactHelper().click(By.name("add"));
+		app.getContactHelper().selectGroupByIndex(3);
+		app.getContactHelper().addGroupToContact();
 		app.getNavigationHelper().goToAGroupPage();
 	}
 	@Test

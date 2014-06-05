@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class NewContactTests extends TestBaseClass{
+public class ContactCreationTests extends TestBaseClass{
   
   @Test
   public void testAddNewFullContact() throws Exception {
