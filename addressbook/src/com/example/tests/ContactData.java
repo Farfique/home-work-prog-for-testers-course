@@ -49,7 +49,47 @@ public class ContactData implements Comparable<ContactData>{
 		this.secondAddress = secondAddress;
 		this.secondHomePhone = secondHomePhone;
 	}
-	
+	public void updateContactData(ContactData another){
+		if (!another.contactName.isEmpty() && another.contactName != null){
+			this.contactName = another.contactName;
+		}
+		if (!another.lastName.isEmpty() && another.lastName != null){
+			this.lastName = another.lastName;
+		}
+		if (!another.email.isEmpty() && another.email != null){
+			this.email = another.email;
+		}
+		if (!another.firstHomePhone.isEmpty() && another.firstHomePhone != null){
+			this.firstHomePhone = another.firstHomePhone;
+		}
+		if (!another.firstAddress.isEmpty() && another.firstAddress != null){
+			this.firstAddress = another.firstAddress;
+		}
+		if (!another.mobilePhone.isEmpty() && another.mobilePhone != null){
+			this.mobilePhone = another.mobilePhone;
+		}
+		if (!another.secondHomePhone.isEmpty() && another.secondHomePhone != null){
+			this.secondHomePhone = another.secondHomePhone;
+		}
+		if (!another.secondEmail.isEmpty() && another.secondEmail != null){
+			this.secondEmail = another.secondEmail;
+		}
+		if (!another.secondAddress.isEmpty() && another.secondAddress != null){
+			this.secondAddress = another.secondAddress;
+		}
+		if (!another.workPhone.isEmpty() && another.workPhone != null){
+			this.workPhone = another.workPhone;
+		}
+		if (!another.day.isEmpty() && another.day != null){
+			this.day = another.day;
+		}
+		if (!another.month.isEmpty() && another.month != null){
+			this.month = another.month;
+		}
+		if (!another.year.isEmpty() && another.year != null){
+			this.year = another.year;
+		}
+	}
 	@Override
 	public String toString() {
 		return "ContactData [contactName=" + contactName + ", lastName="

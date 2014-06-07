@@ -17,6 +17,15 @@ public class GroupData implements Comparable<GroupData>{
 		this.header = header;	
 		this.footer = footer;			
 	}
+	
+	public void updateData (GroupData another){
+		if (!another.name.isEmpty()&&another.name != null)
+			this.name = another.name;
+		if (!another.header.isEmpty()&&another.header != null)
+			this.header = another.header;
+		if (!another.footer.isEmpty()&&another.footer != null)
+			this.footer = another.footer;
+	}
 
 	@Override
 	public String toString() {

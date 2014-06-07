@@ -9,49 +9,26 @@ import org.testng.annotations.Test;
 
 public class ContactModificationTests extends TestBaseClass {
 	
-	@Test
-	public void testRenameContact() throws Exception {
+	@Test(dataProvider = "randomValidContactGenerator")
+	public void testEditContact(ContactData contactData) throws Exception {
 		app.getNavigationHelper().goToHomePage();
 		 //save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
 	    //actions
-	    int index = 2;
+	    int index = generateRandomIndex(oldList);
 		app.getContactHelper().initEditContact(index);
-		ContactData contactData = new ContactData();
-	    contactData.contactName = "Bunny";
 	    app.getContactHelper().fillContactData(contactData);
 	    app.getContactHelper().updateContact();
 	    app.getContactHelper().returnHomeFromNewContact();
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    //compare two states
-	    oldList.get(index).contactName = contactData.contactName;
+	    oldList.get(index).updateContactData(contactData);
 	    Collections.sort(oldList);
 	    Collections.sort(newList);
 	    assertEquals(newList, oldList);
 	}
 	
-	@Test
-	public void testContactChangedPhone() throws Exception {
-		app.getNavigationHelper().goToHomePage();
-		 //save old state
-	    List<ContactData> oldList = app.getContactHelper().getContacts();
-	    //actions
-	    int index = 20;
-		app.getContactHelper().initEditContact(20);
-		ContactData contactData = new ContactData();
-	    contactData.firstHomePhone = "77777";
-	    app.getContactHelper().fillContactData(contactData);
-	    app.getContactHelper().updateContact();
-	    app.getContactHelper().returnHomeFromNewContact();
-	    //save new state
-	    List<ContactData> newList = app.getContactHelper().getContacts();
-	    //compare two states
-	    oldList.get(index).firstHomePhone = contactData.firstHomePhone;
-	    Collections.sort(oldList);
-	    Collections.sort(newList);
-	    assertEquals(newList, oldList);
-	}
 	//@Test
 	public void testAddGroupToContact() throws Exception{
 		app.getNavigationHelper().goToHomePage();
@@ -72,24 +49,23 @@ public class ContactModificationTests extends TestBaseClass {
 		app.getContactHelper().addGroupToContact();
 		app.getNavigationHelper().goToAGroupPage();
 	}
-	@Test
-	public void testModifyContactViaDetails() throws Exception {
+	@Test (dataProvider = "randomValidContactGenerator")
+	public void testModifyContactViaDetails(ContactData contactData) throws Exception {
 		app.getNavigationHelper().goToHomePage();
 		 //save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
 	    //actions
-	    int index = 3;
-		app.getContactHelper().openContactDetails(3);
+	    int index = generateRandomIndex(oldList);
+		app.getContactHelper().openContactDetails(index);
 		app.getContactHelper().modifyContactOnDetails();
-		ContactData contactData = new ContactData();
-	    contactData.firstHomePhone = "88888";
+		
 	    app.getContactHelper().fillContactData(contactData);
 	    app.getContactHelper().updateContact();
 	    app.getContactHelper().returnHomeFromNewContact();
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    //compare two states
-	    oldList.get(index).firstHomePhone = contactData.firstHomePhone;
+	    oldList.get(index).updateContactData(contactData);
 	    Collections.sort(oldList);
 	    Collections.sort(newList);
 	    assertEquals(newList, oldList);

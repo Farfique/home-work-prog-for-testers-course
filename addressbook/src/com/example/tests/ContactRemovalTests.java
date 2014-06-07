@@ -15,7 +15,7 @@ public class ContactRemovalTests extends TestBaseClass {
 	    //save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
 	    //actions
-	    int index = 3;
+	    int index = generateRandomIndex(oldList);
 		app.getContactHelper().initEditContact(index);
 		app.getContactHelper().deleteContact();
 	    app.getContactHelper().returnHomeFromNewContact();
