@@ -11,25 +11,5 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-addressbook/test-output/
-addressbook/.settings/
-addressbook/test-output/Default suite/Default test.html
-addressbook/test-output/Default suite/Default test.html
-addressbook/test-output/Default suite/Default test.html
-addressbook/test-output/Default suite/Default test.xml
-addressbook/test-output/Default suite/testng-failed.xml
-addressbook/test-output/emailable-report.html
-addressbook/test-output/index.html
-addressbook/test-output/junitreports/TEST-com.example.tests.NewContactTest.xml
-addressbook/test-output/junitreports/TEST-com.example.tests.NewEmptyContactTest.xml
-addressbook/test-output/junitreports/TEST-com.example.tests.NewEmptyGroupTest.xml
-addressbook/test-output/junitreports/TEST-com.example.tests.NewGroupTest.xml
-addressbook/test-output/old/Default suite/classes.html
-addressbook/test-output/old/Default suite/methods-alphabetical.html
-addressbook/test-output/old/Default suite/methods-not-run.html
-addressbook/test-output/old/Default suite/methods.html
-addressbook/test-output/old/Default suite/testng.xml.html
-addressbook/test-output/old/Default suite/toc.html
-addressbook/test-output/old/index.html
-addressbook/test-output/testng-failed.xml
-addressbook/test-output/testng-results.xml
+test-output/
+.settings/
