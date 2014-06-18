@@ -28,6 +28,8 @@ public class GroupRemovalTests extends TestBaseClass {
 	    }
 		app.getGroupHelper().deleteGroup();
 		app.getGroupHelper().returnToGroupPage();
+		app.getGroupHelper().rebuildCache();
+		
 	    //save new state
 	    List<GroupData> newList = app.getGroupHelper().getGroups();
 	    // compare two states

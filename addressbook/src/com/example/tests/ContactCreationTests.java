@@ -20,6 +20,7 @@ public class ContactCreationTests extends TestBaseClass{
     app.getContactHelper().fillContactData(contactData);
     app.getContactHelper().submitContact();
     app.getContactHelper().returnHomeFromNewContact();
+    app.getContactHelper().rebuildContactsCache();
     //save new state
     List<ContactData> newList = app.getContactHelper().getContacts();
     //compare two states

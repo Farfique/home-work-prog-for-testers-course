@@ -21,6 +21,7 @@ public class GroupCreationTests extends TestBaseClass{
     app.getGroupHelper().fillGroupData(myGroupData);
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnToGroupPage();
+    app.getGroupHelper().rebuildCache();
     
     //save new state
     List<GroupData> newList = app.getGroupHelper().getGroups();

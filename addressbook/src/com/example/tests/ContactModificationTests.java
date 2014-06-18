@@ -20,6 +20,7 @@ public class ContactModificationTests extends TestBaseClass {
 	    app.getContactHelper().fillContactData(contactData);
 	    app.getContactHelper().updateContact();
 	    app.getContactHelper().returnHomeFromNewContact();
+	    app.getContactHelper().rebuildContactsCache();
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    //compare two states
@@ -62,6 +63,7 @@ public class ContactModificationTests extends TestBaseClass {
 	    app.getContactHelper().fillContactData(contactData);
 	    app.getContactHelper().updateContact();
 	    app.getContactHelper().returnHomeFromNewContact();
+	    app.getContactHelper().rebuildContactsCache();
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    //compare two states

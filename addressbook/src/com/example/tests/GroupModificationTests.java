@@ -23,6 +23,7 @@ public class GroupModificationTests extends TestBaseClass {
 	    app.getGroupHelper().fillGroupData(groupData);
 	    app.getGroupHelper().updateGroup();
 	    app.getGroupHelper().returnToGroupPage();
+	    app.getGroupHelper().rebuildCache();
 	    //save new state
 	    List<GroupData> newList = app.getGroupHelper().getGroups();
 	    // compare two states

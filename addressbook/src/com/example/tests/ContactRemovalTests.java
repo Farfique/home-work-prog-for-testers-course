@@ -19,6 +19,7 @@ public class ContactRemovalTests extends TestBaseClass {
 		app.getContactHelper().initEditContact(index);
 		app.getContactHelper().deleteContact();
 	    app.getContactHelper().returnHomeFromNewContact();
+	    app.getContactHelper().rebuildContactsCache();
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    //compare two states
