@@ -2,19 +2,19 @@ package com.example.tests;
 
 public class ContactData implements Comparable<ContactData>{
 	
-		public String contactName;
-	public String lastName;
-	public String firstAddress;
-	public String firstHomePhone;
-	public String mobilePhone;
-	public String workPhone;
-	public String email;
-	public String secondEmail;
-	public String day;
-	public String month;
-	public String year;
-	public String secondAddress;
-	public String secondHomePhone;
+	private String contactName;
+	private String lastName;
+	private String firstAddress;
+	private String firstHomePhone;
+	private String mobilePhone;
+	private String workPhone;
+	private String email;
+	private String secondEmail;
+	private String day;
+	private String month;
+	private String year;
+	private String secondAddress;
+	private String secondHomePhone;
 	
 	public ContactData() {
 		this.contactName = "";
@@ -30,6 +30,58 @@ public class ContactData implements Comparable<ContactData>{
 		this.secondHomePhone = "";
 	}
 	
+	public String getContactName() {
+		return contactName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getFirstAddress() {
+		return firstAddress;
+	}
+
+	public String getFirstHomePhone() {
+		return firstHomePhone;
+	}
+
+	public String getMobilePhone() {
+		return mobilePhone;
+	}
+
+	public String getWorkPhone() {
+		return workPhone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getSecondEmail() {
+		return secondEmail;
+	}
+
+	public String getDay() {
+		return this.day;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public String getSecondAddress() {
+		return secondAddress;
+	}
+
+	public String getSecondHomePhone() {
+		return secondHomePhone;
+	}
+
 	public ContactData(String contactName, String lastName,
 			String firstAddress, String firstHomePhone, String mobilePhone,
 			String workPhone, String email, String secondEmail,
@@ -162,6 +214,71 @@ public class ContactData implements Comparable<ContactData>{
 		} else if (!lastName.equals(other.lastName))
 			return false;
 		return true;
+	}
+
+	public ContactData withContactName(String name) {
+		contactName = name;
+		return this;
+	}
+
+	public ContactData withLastName(String lastName) {
+		this.lastName = lastName;
+		return this;
+	}
+
+	public ContactData withFirstAddress(String firstAddress) {
+		this.firstAddress = firstAddress;
+		return this;
+	}
+
+	public ContactData withFirstHomePhone(String firstHomePhone) {
+		this.firstHomePhone = firstHomePhone;
+		return this;
+	}
+
+	public ContactData withMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+		return this;
+	}
+
+	public ContactData withWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
+		return this;
+	}
+
+	public ContactData withEmail(String email) {
+		this.email = email;
+		return this;
+	}
+
+	public ContactData withSecondEmail(String secondEmail) {
+		this.secondEmail = secondEmail;
+		return this;
+	}
+
+	public ContactData withBirthDay(String birthDay) {
+		this.day = birthDay;
+		return this;
+	}
+
+	public ContactData withBirthMonth(String birthMonth) {
+		this.month = birthMonth;
+		return this;
+	}
+
+	public ContactData withBirthYear(String birthYear) {
+		year = birthYear;
+		return this;
+	}
+
+	public ContactData withSecondAddress(String secondAddress) {
+		this.secondAddress = secondAddress;
+		return this;
+	}
+
+	public ContactData withSecondHomePhone(String secondHomePhone) {
+		this.secondHomePhone = secondHomePhone;
+		return this;
 	}
 
 

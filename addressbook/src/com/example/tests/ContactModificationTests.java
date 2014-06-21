@@ -7,22 +7,23 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
-public class ContactModificationTests extends TestBaseClass {
+import com.example.fw.ContactHelper.WHERE;
+
+public class ContactModificationTests extends TestBase {
 	
 	@Test(dataProvider = "randomValidContactGenerator")
 	public void testEditContact(ContactData contactData) throws Exception {
-		app.getNavigationHelper().goToHomePage();
-		 //save old state
+		
+		//save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
+	    
 	    //actions
-	    int index = generateRandomIndex(oldList);
-		app.getContactHelper().initEditContact(index);
-	    app.getContactHelper().fillContactData(contactData);
-	    app.getContactHelper().updateContact();
-	    app.getContactHelper().returnHomeFromNewContact();
-	    app.getContactHelper().rebuildContactsCache();
+	    int index = app.getContactHelper().generateRandomIndex(oldList);
+	    app.getContactHelper().modifyContact(contactData, index);
+	    
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
+	    
 	    //compare two states
 	    oldList.get(index).updateContactData(contactData);
 	    Collections.sort(oldList);
@@ -32,40 +33,45 @@ public class ContactModificationTests extends TestBaseClass {
 	
 	//@Test
 	public void testAddGroupToContact() throws Exception{
-		app.getNavigationHelper().goToHomePage();
-		app.getContactHelper().selectContact(4);
-		app.getContactHelper().selectGroupByIndex(3);
-		app.getContactHelper().addGroupToContact();
-		app.getNavigationHelper().goToAGroupPage();
+		//save old state
+	    List<ContactData> oldList = app.getContactHelper().getContacts();
+	
+	    //actions
+	    int index = app.getContactHelper().generateRandomIndex(oldList);
+	    int groupIndex = app.getContactHelper().rndGroupIndex(WHERE.HOME);
+	    
+	    app.getContactHelper().attributeGroupToOneContact(index, groupIndex);
+		
 		
 	}
 	
 	//@Test
 	public void testAddGroupToFewContacts() throws Exception{
-		app.getNavigationHelper().goToHomePage();
-		app.getContactHelper().selectContact(1);
-		app.getContactHelper().selectContact(2);
-		app.getContactHelper().selectContact(3);
-		app.getContactHelper().selectGroupByIndex(3);
-		app.getContactHelper().addGroupToContact();
-		app.getNavigationHelper().goToAGroupPage();
+		
+		//save old state
+	    List<ContactData> oldList = app.getContactHelper().getContacts();
+	    
+	  //actions
+	    int[] index = app.getContactHelper().generateFewIndexes(oldList);
+	    int groupIndex = app.getContactHelper().rndGroupIndex(WHERE.HOME);
+	    
+	    app.getContactHelper().attributeGroupToFewContacts(index, groupIndex);
+	    
+		
 	}
 	@Test (dataProvider = "randomValidContactGenerator")
 	public void testModifyContactViaDetails(ContactData contactData) throws Exception {
-		app.getNavigationHelper().goToHomePage();
+		
 		 //save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
+	    
 	    //actions
-	    int index = generateRandomIndex(oldList);
-		app.getContactHelper().openContactDetails(index);
-		app.getContactHelper().modifyContactOnDetails();
-		
-	    app.getContactHelper().fillContactData(contactData);
-	    app.getContactHelper().updateContact();
-	    app.getContactHelper().returnHomeFromNewContact();
-	    app.getContactHelper().rebuildContactsCache();
+	    int index = app.getContactHelper().generateRandomIndex(oldList);
+	    app.getContactHelper().modifyContactByDetails(index, contactData);
+	    
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
+	    
 	    //compare two states
 	    oldList.get(index).updateContactData(contactData);
 	    Collections.sort(oldList);

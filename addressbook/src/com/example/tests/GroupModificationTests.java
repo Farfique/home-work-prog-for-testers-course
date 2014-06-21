@@ -1,52 +1,45 @@
 package com.example.tests;
 
-import static org.testng.Assert.assertEquals;
-
-import java.util.Collections;
-import java.util.List;
-
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 import org.testng.annotations.Test;
+import com.example.utils.SortedListOf;
 
-public class GroupModificationTests extends TestBaseClass {
+public class GroupModificationTests extends TestBase {
 	
 	@Test(dataProvider = "randomValidGroupGenerator")
 	public void testEditGroup(GroupData groupData) throws Exception{
-		app.getNavigationHelper().goToHomePage();
-	    app.getNavigationHelper().goToGroupPage();
+		
 	    // save old state
-	    List<GroupData> oldList = app.getGroupHelper().getGroups();
-	    // actions
-	    int index = generateRandomIndex(oldList);
+		SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
 	    
-	    app.getGroupHelper().selectGroup(index);
-	    app.getGroupHelper().initEditGroup();
-	    app.getGroupHelper().fillGroupData(groupData);
-	    app.getGroupHelper().updateGroup();
-	    app.getGroupHelper().returnToGroupPage();
-	    app.getGroupHelper().rebuildCache();
+	    // actions
+	    int index = app.getGroupHelper().generateRandomIndex(oldList);
+	    app.getGroupHelper().modifyGroup(groupData, index);
+	    
 	    //save new state
-	    List<GroupData> newList = app.getGroupHelper().getGroups();
+	    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+	    
 	    // compare two states
 	    oldList.get(index).updateData(groupData);
-	    Collections.sort(oldList);
-	    assertEquals(newList, oldList);
+	   
+	   assertThat(newList, equalTo(oldList.update()));
 	}
 	
 	//@Test(dataProvider = "randomValidGroupGenerator")
 	public void testEditNoGroup(GroupData groupData) throws Exception{
-		app.getNavigationHelper().goToHomePage();
-	    app.getNavigationHelper().goToGroupPage();
+		
 	    // save old state
-	    List<GroupData> oldList = app.getGroupHelper().getGroups();
+		SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
+	    
 	    // actions
-	    app.getGroupHelper().initEditGroup();
-	    app.getGroupHelper().fillGroupData(groupData);
-	    app.getGroupHelper().updateGroup();
-	    app.getGroupHelper().returnToGroupPage();
+	    app.getGroupHelper().modifyGroup(groupData, -1);
+	    
 	    //save new state
-	    List<GroupData> newList = app.getGroupHelper().getGroups();
+	    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+	    
 	    // compare two states
-	    assertEquals(newList, oldList);
+	    assertThat(newList, equalTo(oldList));
 	}
 
 }

@@ -1,11 +1,15 @@
 package com.example.fw;
 
 
+import java.util.List;
+import java.util.Random;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public abstract class HelperBase {
@@ -67,9 +71,51 @@ public abstract class HelperBase {
 			new Select(driver.findElement(locator)).selectByVisibleText(text);
 	    }
 	}
-	public void selectElementByIndex(By locator, int index) {
-		new Select(driver.findElement(locator)).selectByIndex(index);
-				
+	public List<WebElement> getListInSelection(By locator){
+		Select selection = new Select(driver.findElement(locator));
+		List<WebElement> options = selection.getOptions();
+		return options;
 	}
 
+	public void selectElementByIndex(By locator, int index) {
+		new Select(driver.findElement(locator)).selectByIndex(index);		
+	}
+	
+	public <T> int generateRandomQuantity(List<T> list){
+		int qty;
+		qty = generateRandomIndex(list) + 1;
+		return qty;
+		}
+
+	public boolean isIndexTheSame(int[] index, int item){
+		boolean same = false;
+		for (int j = 0; j<item; j++){
+			if (index[item]== index[j]){
+				same = true;
+			}	
+		}
+		return same;
+	}
+	
+	public <T> int generateRandomIndex(List<T> list){
+		Random rnd = new Random();
+		int index = 0;
+		if (list.size() >= 1){
+			index = rnd.nextInt(list.size()-1);
+		}
+		else
+			index = -1;
+		return index;
+	}
+	
+	public <T> int[] generateFewIndexes(List<T> list){
+		int quantity = generateRandomQuantity(list);
+	    int[] index = new int[quantity];
+	    for (int i = 0; i< quantity; i++){
+	    	do
+	    	index[i] = generateRandomIndex(list);
+	    	while (isIndexTheSame(index, i));
+	    }
+	    return index;
+	}	
 }

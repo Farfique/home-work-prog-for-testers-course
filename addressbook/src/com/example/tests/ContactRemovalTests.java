@@ -7,21 +7,21 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
-public class ContactRemovalTests extends TestBaseClass {
+public class ContactRemovalTests extends TestBase {
 	
 	@Test
 	public void testDeleteContact() throws Exception{
-		app.getNavigationHelper().goToHomePage();
+		
 	    //save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
+	    
 	    //actions
-	    int index = generateRandomIndex(oldList);
-		app.getContactHelper().initEditContact(index);
-		app.getContactHelper().deleteContact();
-	    app.getContactHelper().returnHomeFromNewContact();
-	    app.getContactHelper().rebuildContactsCache();
+	    int index = app.getContactHelper().generateRandomIndex(oldList);
+	    app.getContactHelper().deleteContact(index);
+		
 	    //save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
+	    
 	    //compare two states
 	    oldList.remove(index);
 	    Collections.sort(oldList);
