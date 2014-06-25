@@ -2,11 +2,19 @@ package com.example.tests;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.*;
+
+import java.util.Iterator;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.example.utils.SortedListOf;
 
 public class GroupCreationTests extends TestBase{
+	//@DataProvider
+	//public Iterator<Object[]> groupsFromFile() {
+	//	return wrapGroupsForDataProvider(loadGroupsFromCsvFile("groups.txt")).iterator();
+	//}
 	
 	@Test(dataProvider = "randomValidGroupGenerator")
 

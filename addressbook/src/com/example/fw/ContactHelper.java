@@ -29,12 +29,16 @@ public class ContactHelper extends HelperBase{
 	public ContactHelper rebuildContactsCache() {
 		cachedContacts = new ArrayList<ContactData>();
 		manager.navigateTo().homePage();
+		/*List<WebElement> rows = driver.findElements(By.xpath("//tr[@name='entry']"));
+		for(WebElement row : rows){
+			String contactName = row.findElement(By.xpath("/td[2]")).getText();
+			String lastName = row.findElement(By.xpath("/td[1]")).getText();
+			String email = row.findElement(By.xpath("/td[3]")).getText();
+			String firstHomePhone = row.findElement(By.xpath("/td[4]")).getText();*/
 		WebElement myTable = driver.findElement(By.id("maintable"));
-		List<WebElement> myTableRows = myTable.findElements(By.tagName("tr"));
-		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-		for (WebElement checkbox : checkboxes) {
-			int row = checkboxes.indexOf(checkbox) + 1;
-			List<WebElement> myTableCells = myTableRows.get(row).findElements(By.tagName("td"));
+		List<WebElement> myTableRows = myTable.findElements(By.cssSelector("tr[name='entry']"));
+		for (WebElement row : myTableRows) {
+			List<WebElement> myTableCells = row.findElements(By.tagName("td"));
 			String contactName = myTableCells.get(2).getText();
 			String lastName = myTableCells.get(1).getText();
 			String email = myTableCells.get(3).getText();
@@ -44,10 +48,6 @@ public class ContactHelper extends HelperBase{
 			.withLastName(lastName)
 			.withEmail(email)
 			.withFirstHomePhone(firstHomePhone);
-			/*contact.contactName = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[3]")).getText();
-			contact.lastName = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[2]")).getText();
-			contact.email = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[4]")).getText();
-			contact.firstHomePhone = driver.findElement(By.xpath("//*[@id='maintable']//tr[" + row + "]/td[5]")).getText();*/
 			cachedContacts.add(contact);	
 			}
 		return this;
