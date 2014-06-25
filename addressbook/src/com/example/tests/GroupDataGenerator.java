@@ -1,6 +1,8 @@
 package com.example.tests;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -75,6 +77,30 @@ public class GroupDataGenerator {
 		FileWriter writer = new FileWriter(file);
 		writer.write(xml);
 		writer.close();
+	}
+	
+	public static List<GroupData> loadGroupsFromCsvFile(File file) throws IOException {
+		List<GroupData> groups = new ArrayList<GroupData>();
+		FileReader reader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		String line = bufferedReader.readLine();
+		while (line != null) {
+			String[] parts = line.split(",");
+			GroupData group = new GroupData()
+			.withName(parts[0])
+			.withHeader(parts[1])
+			.withFooter(parts[2]);
+			groups.add(group);
+			line = bufferedReader.readLine();
+		}
+		reader.close();
+		return groups;
+	}
+	
+	public static List<GroupData> loadGroupsFromXmlFile(File file) throws IOException {
+		XStream xstream = new XStream();
+		xstream.alias("Group", GroupData.class);
+		return (List<GroupData>) xstream.fromXML(file);
 	}
 
 }

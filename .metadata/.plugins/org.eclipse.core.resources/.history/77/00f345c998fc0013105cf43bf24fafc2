@@ -1,0 +1,72 @@
+package com.example.tests;
+
+import static org.testng.Assert.assertEquals;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class ContactCreationTests extends TestBase{
+	@DataProvider
+	public Iterator<Object[]> contactsFromCSVFile() throws IOException {
+		return wrapContactsForDataProvider(loadContactsFromCsvFile(new File("contacts.txt"))).iterator();
+	}
+	
+	private List<ContactData> loadContactsFromCsvFile(File file) throws IOException {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		FileReader reader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		String line = bufferedReader.readLine();
+		while (line != null) {
+			String[] parts = line.split(",");
+			ContactData contact = new ContactData()
+			.withContactName(parts[0])
+			.withLastName(parts[1])
+			.withFirstAddress(parts[2])
+			.withFirstHomePhone(parts[3])
+			.withMobilePhone(parts[4])
+			.withWorkPhone(parts[5])
+			.withEmail(parts[6])
+			.withSecondEmail(parts[7])
+			.withBirthDay(parts[8])
+			.withBirthMonth(parts[9])
+			.withBirthYear(parts[10])
+			.withSecondAddress(parts[11])
+			.withSecondHomePhone(parts[12]);
+			
+			contacts.add(contact);
+			line = bufferedReader.readLine();
+		}
+		reader.close();
+		return contacts;
+	}  
+	@Test(dataProvider = "contactsFromCSVFile")
+  
+  public void testAddNewValidContact(ContactData contactData) throws Exception {
+    
+    //save old state
+    List<ContactData> oldList = app.getContactHelper().getContacts();
+    
+    //actions
+    app.getContactHelper().createNewContact(contactData);
+    
+    //save new state
+    List<ContactData> newList = app.getContactHelper().getContacts();
+    
+    //compare two states
+    oldList.add(contactData);
+    Collections.sort(oldList);
+    Collections.sort(newList);
+    assertEquals(newList, oldList);
+  }
+ 
+  
+}

@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.example.tests.ContactDataGenerator"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="5 groups.xml xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="1 contacts.xml xml"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="addressbook"/>
 </launchConfiguration>

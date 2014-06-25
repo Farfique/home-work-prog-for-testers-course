@@ -2,7 +2,9 @@ package com.example.tests;
 
 import static com.example.tests.GroupDataGenerator.generateRandomString;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,6 +62,7 @@ public class ContactDataGenerator {
 					contact.getFirstAddress() + "," + contact.getFirstHomePhone() + "," + 
 					contact.getMobilePhone() + "," + contact.getWorkPhone() + "," + 
 					contact.getEmail() + "," + contact.getSecondEmail() + "," + 
+					contact.getDay() + "," + contact.getMonth() + "," + 
 					contact.getYear() + "," + contact.getSecondAddress() + "," + 
 					contact.getSecondHomePhone() + ",!\n");
 		}
@@ -113,5 +116,37 @@ public class ContactDataGenerator {
 		int number = rnd.nextInt(100)+1900;
 		return String.valueOf(number);
 	}
-
+	public static List<ContactData> loadContactsFromCsvFile(File file) throws IOException {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		FileReader reader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		String line = bufferedReader.readLine();
+		while (line != null) {
+			String[] parts = line.split(",");
+			ContactData contact = new ContactData()
+			.withContactName(parts[0])
+			.withLastName(parts[1])
+			.withFirstAddress(parts[2])
+			.withFirstHomePhone(parts[3])
+			.withMobilePhone(parts[4])
+			.withWorkPhone(parts[5])
+			.withEmail(parts[6])
+			.withSecondEmail(parts[7])
+			.withBirthDay(parts[8])
+			.withBirthMonth(parts[9])
+			.withBirthYear(parts[10])
+			.withSecondAddress(parts[11])
+			.withSecondHomePhone(parts[12]);
+			
+			contacts.add(contact);
+			line = bufferedReader.readLine();
+		}
+		reader.close();
+		return contacts;
+	}  
+	public static List<ContactData> loadContactsFromXmlFile(File file) throws IOException {
+		XStream xstream = new XStream();
+		xstream.alias("Contact", ContactData.class);
+		return (List<ContactData>) xstream.fromXML(file);
+	}
 }
