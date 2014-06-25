@@ -1,0 +1,314 @@
+[
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "e15f5140cfdafc6750e44a3c6786879d28ccbcdb",
+    "jarFileModificationDate": "2014-05-18T13:36:57.569+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\sunmscapi.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "org.yaml.snakeyaml",
+    "version": {
+      "major": 1,
+      "minor": 8,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "36ff5dbb6f9592d511935f65ff262f5c1a53fef8",
+    "jarFileModificationDate": "2014-05-18T13:58:37.295+04:00",
+    "location": "D:\\программы\\selenium-server-standalone-2.41.0.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "b4bcb8ef6d52dff5e629ec081acde17354ee8b2a",
+    "jarFileModificationDate": "2014-05-18T13:37:01.025+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\rt.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "ec2e6e9165eed8db4bac85ce04f4440683205a24",
+    "jarFileModificationDate": "2014-05-18T13:37:01.834+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\localedata.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "3bc82c5707e80b282524f41eb633f7abf03b23b6",
+    "jarFileModificationDate": "2014-05-18T13:36:57.562+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\sunec.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "37137c6586557f39ec5983923be2deb1a4ed2f7a",
+    "jarFileModificationDate": "2014-05-18T13:36:57.772+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\resources.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "xpp3_min-1.1.4c",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "19d4e90b43059058f6e056f794f0ea4030d60b86",
+    "jarFileModificationDate": "2014-02-08T11:50:46+04:00",
+    "location": "D:\\по работе\\Программирование для тестировщиков\\Программы-окружение\\xstream-distribution-1.4.7-bin\\xstream-1.4.7\\lib\\xstream\\xpp3_min-1.1.4c.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "3a8d2dd1544cefb7977a0b785a52a2ab919099de",
+    "jarFileModificationDate": "2014-05-18T13:37:01.674+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\jsse.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "dcf26224107fbd31aafccbf2a94dc33738d146f4",
+    "jarFileModificationDate": "2014-05-18T13:36:57.673+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\jfr.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "d45ce09713ed78316e80905cc846685cba0a7188",
+    "jarFileModificationDate": "2014-05-18T13:36:57.516+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\cldrdata.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "xstream-hibernate",
+    "version": {
+      "major": 1,
+      "minor": 4,
+      "micro": 7,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "27090827ac2ef8bf55ce1b88f81fc998b6537eff",
+    "jarFileModificationDate": "2014-02-08T11:53:42+04:00",
+    "location": "D:\\по работе\\Программирование для тестировщиков\\Программы-окружение\\xstream-distribution-1.4.7-bin\\xstream-1.4.7\\lib\\xstream-hibernate-1.4.7.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "4f4081b69df48f293cf72c65d2cbe0108fbd1539",
+    "jarFileModificationDate": "2014-05-18T13:36:57.572+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\sunpkcs11.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "xstream-benchmark",
+    "version": {
+      "major": 1,
+      "minor": 4,
+      "micro": 7,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "7bf4d6941532708fed4703140392813569315ba6",
+    "jarFileModificationDate": "2014-02-08T11:53:42+04:00",
+    "location": "D:\\по работе\\Программирование для тестировщиков\\Программы-окружение\\xstream-distribution-1.4.7-bin\\xstream-1.4.7\\lib\\xstream-benchmark-1.4.7.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "684ad96c0d8b645d387e6cbf9bef3e4a33c1106e",
+    "jarFileModificationDate": "2014-05-18T13:37:02.632+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\jfxrt.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "5e2c12ffab605a78f773e42b2497a9569316346f",
+    "jarFileModificationDate": "2014-05-18T13:36:57.566+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\sunjce_provider.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "227933c115a6b43aab20216617a374719b05c301",
+    "jarFileModificationDate": "2014-05-18T13:36:57.574+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\zipfs.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f7b49edd98882c1297d986a65804e66e5a84a8a7",
+    "jarFileModificationDate": "2014-05-18T13:36:57.519+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\dnsns.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "c86a74449205e26a476bef3b3dac445669079901",
+    "jarFileModificationDate": "2014-05-18T13:36:57.559+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\nashorn.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "9a1284417f00f1a4c77e67d71a6fbea2eeaf5d7c",
+    "jarFileModificationDate": "2014-05-18T13:36:57.662+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\jce.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "116aa900ca5c5503eed4b6fa7213e7b20e9d5efb",
+    "jarFileModificationDate": "2014-05-18T13:37:01.156+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\charsets.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "c66ea296c0baa12795e0867447fb43639f234562",
+    "jarFileModificationDate": "2014-05-18T13:36:57.501+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\access-bridge.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "xstream",
+    "version": {
+      "major": 1,
+      "minor": 4,
+      "micro": 7,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "bce3282142b63068260f021fcbe48b72e8d71a1a",
+    "jarFileModificationDate": "2014-02-08T11:53:42+04:00",
+    "location": "D:\\по работе\\Программирование для тестировщиков\\Программы-окружение\\xstream-distribution-1.4.7-bin\\xstream-1.4.7\\lib\\xstream-1.4.7.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "6ac01b52f1e53c17f5d9fc463e1e31299e8f1154",
+    "jarFileModificationDate": "2014-05-18T13:36:57.522+04:00",
+    "location": "C:\\Program Files\\Java\\jre8\\lib\\ext\\jaccess.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "xmlpull-1.1.3.1",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "2b8e230d2ab644e4ecaa94db7cdedbc40c805dfa",
+    "jarFileModificationDate": "2014-02-08T11:50:46+04:00",
+    "location": "D:\\по работе\\Программирование для тестировщиков\\Программы-окружение\\xstream-distribution-1.4.7-bin\\xstream-1.4.7\\lib\\xstream\\xmlpull-1.1.3.1.jar",
+    "javaRuntime": false
+  }
+]
