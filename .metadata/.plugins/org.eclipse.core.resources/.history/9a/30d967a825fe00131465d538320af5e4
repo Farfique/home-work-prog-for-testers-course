@@ -34,7 +34,6 @@ public class ApplicationManager {
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    baseUrl = properties.getProperty("baseurl");
-	    driver.get(baseUrl);
 	    driver.manage().window().maximize();
 	}
 	

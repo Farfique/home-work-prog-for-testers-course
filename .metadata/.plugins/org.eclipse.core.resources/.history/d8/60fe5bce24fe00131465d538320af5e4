@@ -27,7 +27,7 @@ public class TestBase {
 		if (app == null){
 			Properties properties = new Properties();
 			properties.load(new FileReader(new File("application.properties")));
-			app = new ApplicationManager(properties);	   
+			app = new ApplicationManager();	   
 		}
 	  }
 	@AfterSuite
