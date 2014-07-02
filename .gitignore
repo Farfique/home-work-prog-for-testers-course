@@ -12,4 +12,10 @@
 hs_err_pid*
 
 addressbook/test-output/
+addressbook/.settings/
 .settings/
+.metadata/
+addressbook-java-test/test-output/
+addressbook-java-test/.settings/
+addressbook-win-test/test-output
+addressbook-win-test/.settings
