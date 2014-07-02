@@ -2277,3 +2277,23 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.testng.eclipse 1 0 2014-07-02 20:45:23.547
+!MESSAGE [TestNGLaunchShortcut] Examining Java element:TestFolderCreation.java [in com.example.tests [in src [in addressbook-java-test]]]
+  package com.example.tests
+  import org.testng.annotations.Test
+  import com.example.fw.Folders
+  import org.hamcrest.Matchers.*
+  import org.hamcrest.MatcherAssert.*
+  class TestFolderCreation
+    void testFolderCreation()
+    void testVariousFoldersCreation()
+    void testFoldersWithSameNameCreation()
+
+!ENTRY org.testng.eclipse 1 0 2014-07-02 20:45:24.373
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /D:/for-work/programming-for-testers/special-programs/eclipse-java-kepler-SR2-win32/eclipse/plugins/org.testng.eclipse_6.8.6.20141201_2240/lib/testng.jar D:\Github-repos\home-work-prog-for-testers-course\addressbook-java-test\bin D:\for-work\programming-for-testers\special-programs\eclipse-java-kepler-SR2-win32\eclipse\plugins\org.testng.eclipse_6.8.6.20141201_2240\lib\testng.jar D:\for-work\programming-for-testers\special-programs\hamcrest-all-1.3.jar D:\for-work\programming-for-testers\special-programs\jemmy\jemmy.jar D:\for-work\programming-for-testers\special-programs\AddressBook-14-42\AddressBook\lib\addressbook.jar D:\for-work\programming-for-testers\special-programs\AddressBook-14-42\AddressBook\ext\lib\aldan3.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 32373 -d D:\Github-repos\home-work-prog-for-testers-course\addressbook-java-test\test-output C:\Users\Farfi\AppData\Local\Temp\testng-eclipse-559243961\testng-customsuite.xml
+java -ea -classpath /D:/for-work/programming-for-testers/special-programs/eclipse-java-kepler-SR2-win32/eclipse/plugins/org.testng.eclipse_6.8.6.20141201_2240/lib/testng.jar:D:\Github-repos\home-work-prog-for-testers-course\addressbook-java-test\bin:D:\for-work\programming-for-testers\special-programs\eclipse-java-kepler-SR2-win32\eclipse\plugins\org.testng.eclipse_6.8.6.20141201_2240\lib\testng.jar:D:\for-work\programming-for-testers\special-programs\hamcrest-all-1.3.jar:D:\for-work\programming-for-testers\special-programs\jemmy\jemmy.jar:D:\for-work\programming-for-testers\special-programs\AddressBook-14-42\AddressBook\lib\addressbook.jar:D:\for-work\programming-for-testers\special-programs\AddressBook-14-42\AddressBook\ext\lib\aldan3.jar org.testng.remote.RemoteTestNG -serport 32373 -d D:\Github-repos\home-work-prog-for-testers-course\addressbook-java-test\test-output C:\Users\Farfi\AppData\Local\Temp\testng-eclipse-559243961\testng-customsuite.xml
