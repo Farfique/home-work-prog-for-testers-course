@@ -1,5 +1,0 @@
-package com.example.utils;
-
-public abstract class IUpdatable<T> {
-	public abstract void test(T obj);
-}
