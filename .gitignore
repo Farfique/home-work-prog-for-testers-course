@@ -22,3 +22,5 @@ addressbook-win-test/test-output
 addressbook-win-test/.settings
 addressbook-java-tests/test-output/
 addressbook-java-tests/.settings/
+.metadata/.plugins/
+.metadata/.mylyn/
