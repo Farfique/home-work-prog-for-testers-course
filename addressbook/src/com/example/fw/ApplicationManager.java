@@ -1,7 +1,6 @@
 package com.example.fw;
 
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +9,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class ApplicationManager {
 	
-	public WebDriver driver;
+	private WebDriver driver;
 	public String baseUrl;
 	protected StringBuffer verificationErrors = new StringBuffer();
 	
@@ -18,24 +17,13 @@ public class ApplicationManager {
 	private GroupHelper groupHelper;
 	private ContactHelper contactHelper;
 	private Properties properties;
+	private HibernateHelper hibernateHelper;
 	
 
 	public ApplicationManager(Properties properties){
 		this.properties = properties;
-		String browser = properties.getProperty("browser");
-		if ("firefox".equals(browser)) {
-		driver = new FirefoxDriver();
-		}
-		else if ("ie".equals(browser)) {
-			driver = new InternetExplorerDriver();
-		}
-		else {
-			throw new Error("Browser" + browser + " is not supported");
-		}
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    baseUrl = properties.getProperty("baseurl");
-	    driver.get(baseUrl);
-	    driver.manage().window().maximize();
+		
+
 	}
 	
 	public void stop() {
@@ -60,6 +48,32 @@ public class ApplicationManager {
 			contactHelper = new ContactHelper(this);
 		}
 		return contactHelper;
+	}
+	public HibernateHelper getHibernateHelper() {
+		if (hibernateHelper == null) {
+			hibernateHelper = new HibernateHelper(this);
+		}
+		return hibernateHelper;
+	}
+
+	public WebDriver getDriver() {
+		if (driver == null) {
+			String browser = properties.getProperty("browser");
+			if ("firefox".equals(browser)) {
+			driver = new FirefoxDriver();
+			}
+			else if ("ie".equals(browser)) {
+				driver = new InternetExplorerDriver();
+			}
+			else {
+				throw new Error("Browser" + browser + " is not supported");
+			}
+			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    baseUrl = properties.getProperty("baseurl");
+		    driver.get(baseUrl);
+		    driver.manage().window().maximize();
+		}
+		return driver;
 	}
 
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import com.example.tests.GroupData;
 import com.example.utils.SortedListOf;
 
-public class GroupHelper extends HelperBase{
+public class GroupHelper extends WebDriverHelperBase{
 	
 	private SortedListOf<GroupData> cachedGroups;
 	
@@ -27,14 +27,15 @@ public class GroupHelper extends HelperBase{
 	
 	public GroupHelper rebuildCache() {
 		
-		cachedGroups = new SortedListOf<GroupData>();
-		manager.navigateTo().groupsPage();
+		cachedGroups = new SortedListOf<GroupData>(manager.getHibernateHelper().listGroups());
+		
+		/*manager.navigateTo().groupsPage();
 		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
 		for (WebElement checkbox : checkboxes) {
 			String title = checkbox.getAttribute("title");
 			String name = title.substring("Select (".length(), title.length() - ")".length());
 			cachedGroups.add(new GroupData().withName(name));		
-		}		
+		}*/		
 		return this;
 	}
 	

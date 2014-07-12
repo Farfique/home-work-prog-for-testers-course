@@ -2,6 +2,7 @@ package com.example.tests;
 
 public class ContactData implements Comparable<ContactData>{
 	
+	private String id;
 	private String contactName;
 	private String lastName;
 	private String firstAddress;
@@ -30,6 +31,10 @@ public class ContactData implements Comparable<ContactData>{
 		this.secondHomePhone = "";
 	}
 	
+	public String getId() {
+		return id;
+	}
+
 	public String getContactName() {
 		return contactName;
 	}
@@ -281,5 +286,60 @@ public class ContactData implements Comparable<ContactData>{
 		return this;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setFirstAddress(String firstAddress) {
+		this.firstAddress = firstAddress;
+	}
+
+	public void setFirstHomePhone(String firstHomePhone) {
+		this.firstHomePhone = firstHomePhone;
+	}
+
+	public void setMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
+
+	public void setWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setSecondEmail(String secondEmail) {
+		this.secondEmail = secondEmail;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public void setSecondAddress(String secondAddress) {
+		this.secondAddress = secondAddress;
+	}
+
+	public void setSecondHomePhone(String secondHomePhone) {
+		this.secondHomePhone = secondHomePhone;
+	}
 
 }

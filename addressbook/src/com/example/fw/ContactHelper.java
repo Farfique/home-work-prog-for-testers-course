@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
 
-public class ContactHelper extends HelperBase{
+public class ContactHelper extends WebDriverHelperBase{
 
 	private List<ContactData> cachedContacts;
 	public static boolean CREATION = true;
@@ -28,13 +28,8 @@ public class ContactHelper extends HelperBase{
 
 	public ContactHelper rebuildContactsCache() {
 		cachedContacts = new ArrayList<ContactData>();
-		manager.navigateTo().homePage();
-		/*List<WebElement> rows = driver.findElements(By.xpath("//tr[@name='entry']"));
-		for(WebElement row : rows){
-			String contactName = row.findElement(By.xpath("/td[2]")).getText();
-			String lastName = row.findElement(By.xpath("/td[1]")).getText();
-			String email = row.findElement(By.xpath("/td[3]")).getText();
-			String firstHomePhone = row.findElement(By.xpath("/td[4]")).getText();*/
+		cachedContacts = manager.getHibernateHelper().listContacts();
+		/*manager.navigateTo().homePage();
 		WebElement myTable = driver.findElement(By.id("maintable"));
 		List<WebElement> myTableRows = myTable.findElements(By.cssSelector("tr[name='entry']"));
 		for (WebElement row : myTableRows) {
@@ -49,7 +44,7 @@ public class ContactHelper extends HelperBase{
 			.withEmail(email)
 			.withFirstHomePhone(firstHomePhone);
 			cachedContacts.add(contact);	
-			}
+			}*/
 		return this;
 		
 	}
