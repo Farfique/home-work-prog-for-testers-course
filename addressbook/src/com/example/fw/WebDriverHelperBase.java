@@ -64,7 +64,17 @@ public abstract class WebDriverHelperBase extends HelperBase {
 	    driver.findElement(locator).sendKeys(text);
 		}
 	}
-	
+	public String getStringField(By locator) {
+		WebElement stroke = driver.findElement(locator);
+		return stroke.getAttribute("value");
+	}
+	public String getTextField(By locator) {
+		return driver.findElement(locator).getText();
+	}
+	public String getSelectField(By locator) {
+		Select stroke = new Select(driver.findElement(locator));
+		return stroke.getFirstSelectedOption().getText();
+	}
 	public void click(By locator) {
 		driver.findElement(locator).click();
 	}

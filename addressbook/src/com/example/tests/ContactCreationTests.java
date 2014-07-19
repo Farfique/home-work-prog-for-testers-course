@@ -28,19 +28,23 @@ public class ContactCreationTests extends TestBase{
   public void testAddNewValidContact(ContactData contactData) throws Exception {
     
     //save old state
-    List<ContactData> oldList = app.getContactHelper().getContacts();
+    List<ContactData> oldBDList = app.getHibernateHelper().listContacts();
     
     //actions
     app.getContactHelper().createNewContact(contactData);
     
     //save new state
-    List<ContactData> newList = app.getContactHelper().getContacts();
+    List<ContactData> newBDList = app.getHibernateHelper().listContacts();
+    List<ContactData> newUIList = app.getContactHelper().getUIContacts();
     
     //compare two states
-    oldList.add(contactData);
-    Collections.sort(oldList);
-    Collections.sort(newList);
-    assertEquals(newList, oldList);
+    oldBDList.add(contactData);
+    Collections.sort(oldBDList);
+    Collections.sort(newBDList);
+    Collections.sort(newUIList);
+    
+    assertEquals(newBDList, oldBDList);
+    assertEquals(newBDList, newUIList);
   }
  
   

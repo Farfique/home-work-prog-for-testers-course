@@ -11,18 +11,20 @@ public class GroupRemovalTests extends TestBase {
 	public void deleteGroups() throws Exception {
 		
 	    // save old state
-		SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
+		SortedListOf<GroupData> oldBDList = app.getHibernateHelper().listGroups();
 	    
 	    // actions
-	    int[] index = app.getGroupHelper().generateFewIndexes(oldList);
+	    int[] index = app.getGroupHelper().generateFewIndexes(oldBDList);
 	    app.getGroupHelper().deleteGroups(index);
 		
 	    //save new state
-	    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+	    SortedListOf<GroupData> newUIList = app.getGroupHelper().getUIGroups();
+	    SortedListOf<GroupData> newBDList = app.getHibernateHelper().listGroups();
 	    
 	    // compare two states
 	    Arrays.sort(index);
-	    assertThat(newList, equalTo(oldList.without(index)));
+	    assertThat(newBDList, equalTo(oldBDList.without(index)));
+	    assertThat(newUIList, equalTo(newBDList));
 	}
 
 }

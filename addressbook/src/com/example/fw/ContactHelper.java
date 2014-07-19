@@ -1,6 +1,7 @@
 package com.example.fw;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -10,7 +11,7 @@ import com.example.tests.ContactData;
 
 public class ContactHelper extends WebDriverHelperBase{
 
-	private List<ContactData> cachedContacts;
+	//private List<ContactData> cachedContacts;
 	public static boolean CREATION = true;
 	public static boolean MODIFICATION = false;
 	public static enum WHERE {HOME, CONTACT_CREATION_PAGE};
@@ -19,17 +20,17 @@ public class ContactHelper extends WebDriverHelperBase{
 		super(manager);
 	}
 	
-	public List<ContactData> getContacts() {
+	/*public List<ContactData> getContacts() {
 		if (cachedContacts == null) {
 			rebuildContactsCache();
 		}
 		return cachedContacts;
-	}
+	}*/
 
-	public ContactHelper rebuildContactsCache() {
-		cachedContacts = new ArrayList<ContactData>();
-		cachedContacts = manager.getHibernateHelper().listContacts();
-		/*manager.navigateTo().homePage();
+	public List<ContactData> getUIContacts() {
+		List<ContactData> cachedContacts = new ArrayList<ContactData>();
+		
+		manager.navigateTo().homePage();
 		WebElement myTable = driver.findElement(By.id("maintable"));
 		List<WebElement> myTableRows = myTable.findElements(By.cssSelector("tr[name='entry']"));
 		for (WebElement row : myTableRows) {
@@ -44,8 +45,8 @@ public class ContactHelper extends WebDriverHelperBase{
 			.withEmail(email)
 			.withFirstHomePhone(firstHomePhone);
 			cachedContacts.add(contact);	
-			}*/
-		return this;
+			}
+		return cachedContacts;
 		
 	}
 	public ContactHelper createNewContact(ContactData contactData) {
@@ -54,7 +55,7 @@ public class ContactHelper extends WebDriverHelperBase{
 	    fillContactData(contactData, CREATION);
 	    submitContact();
 	    returnHomeFromNewContact();
-	    rebuildContactsCache();
+	   
 		return this;
 	}
 	
@@ -64,7 +65,7 @@ public class ContactHelper extends WebDriverHelperBase{
 	    fillContactData(contactData, MODIFICATION);
 	    updateContact();
 	    returnHomeFromNewContact();
-	    rebuildContactsCache();
+	    
 		return this;
 	}
 	
@@ -73,7 +74,7 @@ public class ContactHelper extends WebDriverHelperBase{
 		initEditContact(index);
 		confirmContactDeletion();
 	    returnHomeFromNewContact();
-	    rebuildContactsCache();
+	    
 		return this;
 	}
 	public int rndGroupIndex(WHERE where) throws Exception {
@@ -104,7 +105,7 @@ public class ContactHelper extends WebDriverHelperBase{
 	    fillContactData(contactData, MODIFICATION);
 	    updateContact();
 	    returnHomeFromNewContact();
-	    rebuildContactsCache();
+	    
 		return this;
 	}
 	//............................................
@@ -135,6 +136,34 @@ public class ContactHelper extends WebDriverHelperBase{
 	    type(By.name("address2"),contactData.getSecondAddress());
 	    type(By.name("phone2"),contactData.getSecondHomePhone());
 	    return this;
+	}
+	
+	public ContactData readContactData(int index) {
+		manager.navigateTo().homePage();
+		initEditContact(index);
+		
+		ContactData contactData = new ContactData();
+		//Name
+		contactData.setContactName(getStringField(By.name("firstname")));
+	    //Last name
+		contactData.setLastName(getStringField(By.name("lastname")));
+	    //Home Address
+		contactData.setFirstAddress(getTextField(By.name("address")));
+	    //Phones
+		contactData.setFirstHomePhone(getStringField(By.name("home")));
+		contactData.setMobilePhone(getStringField(By.name("mobile")));
+		contactData.setWorkPhone(getStringField(By.name("work")));
+	    //E-mails
+		contactData.setEmail(getStringField(By.name("email")));
+		contactData.setSecondEmail(getStringField(By.name("email2")));
+	    //Birth date	    
+		contactData.setDay(getSelectField(By.name("bday")));
+		contactData.setMonth(getSelectField(By.name("bmonth")));
+		contactData.setYear(getStringField(By.name("byear")));
+	 
+	    contactData.setSecondAddress(getTextField(By.name("address2")));
+	    contactData.setSecondHomePhone(getStringField(By.name("phone2")));
+	    return contactData;
 	}
 
 	public ContactHelper submitContact() {
@@ -209,11 +238,5 @@ public class ContactHelper extends WebDriverHelperBase{
 		else {
 			throw new Exception("Can't get groups list");
 		}
-	}
-	
-	
-	
-
-	
-	
+	}	
 }

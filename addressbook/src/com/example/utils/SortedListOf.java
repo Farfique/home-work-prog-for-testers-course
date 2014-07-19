@@ -10,7 +10,7 @@ import com.google.common.collect.Lists;
 
 public class SortedListOf<T extends Comparable<T>> extends ForwardingList<T> {
 
-  private List<T> list = Lists.newArrayList();
+  public List<T> list = Lists.newArrayList();
   
   public SortedListOf() {
   }

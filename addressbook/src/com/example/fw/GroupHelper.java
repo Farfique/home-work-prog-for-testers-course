@@ -10,34 +10,34 @@ import com.example.utils.SortedListOf;
 
 public class GroupHelper extends WebDriverHelperBase{
 	
-	private SortedListOf<GroupData> cachedGroups;
+	//private SortedListOf<GroupData> cachedGroups;
 	
 	public GroupHelper(ApplicationManager manager) {
 		super(manager);
 	}
 	
-	public SortedListOf<GroupData> getGroups() {
+	/*public SortedListOf<GroupData> getGroups() {
 		if (cachedGroups == null)
 		{
 			rebuildCache();
 		}
 		return cachedGroups;
 		
-	}
+	} */
 	
-	public GroupHelper rebuildCache() {
+	public SortedListOf<GroupData> getUIGroups() {
 		
-		cachedGroups = new SortedListOf<GroupData>(manager.getHibernateHelper().listGroups());
+		SortedListOf<GroupData> cachedGroups = new SortedListOf<GroupData>();
 		
-		/*manager.navigateTo().groupsPage();
+		manager.navigateTo().groupsPage();
 		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
 		for (WebElement checkbox : checkboxes) {
 			String title = checkbox.getAttribute("title");
 			String name = title.substring("Select (".length(), title.length() - ")".length());
 			cachedGroups.add(new GroupData().withName(name));		
-		}*/		
-		return this;
-	}
+		}		
+		return cachedGroups;
+	} 
 	
 	public GroupHelper createGroup(GroupData myGroupData) {
 		manager.navigateTo().groupsPage();
@@ -45,7 +45,8 @@ public class GroupHelper extends WebDriverHelperBase{
 	    fillGroupData(myGroupData);
 	    submitGroupCreation();
 	    returnToGroupPage();
-	    rebuildCache();	
+	    //manager.getModel().addGroup(myGroupData);
+	    //rebuildCache();	
 		return this;
 	}
 
@@ -56,7 +57,8 @@ public class GroupHelper extends WebDriverHelperBase{
 	    fillGroupData(groupData);
 	    updateGroup();
 	    returnToGroupPage();
-	    rebuildCache();
+	    //manager.getModel().removeGroup(index).addGroup(groupData);
+	    //rebuildCache();
 		return this;
 	}
 	
@@ -65,7 +67,8 @@ public class GroupHelper extends WebDriverHelperBase{
 		selectGroups(index);
 		confirmGroupDeletion();
 		returnToGroupPage();
-		rebuildCache();
+		//manager.getModel().removeGroup(index);
+		//rebuildCache();
 		return this;
 	}
 

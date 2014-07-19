@@ -160,10 +160,22 @@ public class ContactData implements Comparable<ContactData>{
 		{
 			if (this.contactName.toLowerCase().compareTo(other.contactName.toLowerCase()) == 0)
 			{
-				if (this.firstHomePhone.toLowerCase().compareTo(other.firstHomePhone.toLowerCase()) == 0)
+				if ((this.firstHomePhone.toLowerCase().compareTo(other.firstHomePhone.toLowerCase()) == 0)
+						||((this.firstHomePhone.equals("")||this.firstHomePhone == null)&&(this.mobilePhone.toLowerCase().compareTo(other.firstHomePhone.toLowerCase()) == 0))
+						||((other.firstHomePhone.equals("")||other.firstHomePhone == null)&&(this.firstHomePhone.toLowerCase().compareTo(other.mobilePhone.toLowerCase()) == 0)))
 				{
 					if (this.email.toLowerCase().compareTo(other.email.toLowerCase()) == 0)
 						return this.email.toLowerCase().compareTo(other.email.toLowerCase());
+					else if((this.email.equals("")||this.email == null)&&(this.secondEmail.toLowerCase().compareTo(other.email.toLowerCase()) == 0)){
+						return this.secondEmail.toLowerCase().compareTo(other.email.toLowerCase());
+					}
+					else if ((other.email.equals("")||other.email==null)&&(this.email.toLowerCase().compareTo(other.secondEmail.toLowerCase()) == 0)){
+						return this.email.toLowerCase().compareTo(other.secondEmail.toLowerCase());
+					} 
+					else {
+						return this.email.toLowerCase().compareTo(other.email.toLowerCase());
+					}
+						
 				}
 				else
 					return this.firstHomePhone.toLowerCase().compareTo(other.firstHomePhone.toLowerCase());
@@ -203,15 +215,24 @@ public class ContactData implements Comparable<ContactData>{
 				return false;
 		} else if (!contactName.equals(other.contactName))
 			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
+		if ((email == null||email.isEmpty()) && !(other.email == null||other.email.isEmpty())){
+				if (!secondEmail.equals(other.email))
+					return false;
+		}
+		else if ((other.email == null||other.email.isEmpty()) && !(email == null)||email.isEmpty()){
+				if (!email.equals(other.secondEmail))
+					return false;
+		}
+		else if (!email.equals(other.email))
 			return false;
-		if (firstHomePhone == null) {
-			if (other.firstHomePhone != null)
+		if ((firstHomePhone == null||firstHomePhone.isEmpty())&& !(other.firstHomePhone == null||other.firstHomePhone.isEmpty())) {
+			if (!mobilePhone.equals(other.firstHomePhone))
 				return false;
-		} else if (!firstHomePhone.equals(other.firstHomePhone))
+		} else if (!((firstHomePhone == null)||firstHomePhone.isEmpty()) && (other.firstHomePhone == null||other.firstHomePhone.isEmpty())) {
+			if (!firstHomePhone.equals(other.mobilePhone))
+				return false;
+		}
+		else if (!firstHomePhone.equals(other.firstHomePhone))
 			return false;
 		if (lastName == null) {
 			if (other.lastName != null)

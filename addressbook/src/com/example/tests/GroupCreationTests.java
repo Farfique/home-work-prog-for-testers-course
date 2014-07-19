@@ -32,15 +32,18 @@ public class GroupCreationTests extends TestBase{
   public void testAddNewGroupWithValidData(GroupData myGroupData) throws IOException {
    	
     // save old state
-    SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
+    SortedListOf<GroupData> oldBDList = app.getHibernateHelper().listGroups();
     
     // actions
     app.getGroupHelper().createGroup(myGroupData);
     
     //save new state
-    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+    SortedListOf<GroupData> newBDList = app.getHibernateHelper().listGroups();
+    SortedListOf<GroupData> newUIList = app.getGroupHelper().getUIGroups();
     
-    // compare two states
-    assertThat(newList, equalTo(oldList.withAdded(myGroupData)));
+    // compare two BD states
+    assertThat(newBDList, equalTo(oldBDList.withAdded(myGroupData)));
+    // compare BD and GUI
+    assertThat(newUIList, equalTo(newBDList));
   }
 }

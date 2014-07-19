@@ -18,17 +18,21 @@ public class ApplicationManager {
 	private ContactHelper contactHelper;
 	private Properties properties;
 	private HibernateHelper hibernateHelper;
-	
+	//private ApplicationModel model;
 
 	public ApplicationManager(Properties properties){
 		this.properties = properties;
-		
+		//model = new ApplicationModel();
 
 	}
 	
 	public void stop() {
 		driver.quit();
 	}
+	
+	/*public ApplicationModel getModel() {
+		return model;
+	}*/
 	
 	public NavigationHelper navigateTo() {
 		if (navigationHelper == null) {
